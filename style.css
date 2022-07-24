@@ -6,7 +6,11 @@
 
 body {
     display: flex;
-    
+    flex-direction: column;
+}
+
+body > h1 {
+    color: red;
 }
 
 #carta-p1 {
@@ -25,3 +29,7 @@ body {
     text-align: center;
 }
 
+#carta-p1 img {
+    width: 270px;
+    align-self: center;
+}
