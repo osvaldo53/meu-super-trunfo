@@ -1,3 +1,5 @@
+//script da pagina de visualização de todos os cards
+
 const deckFull = [
     card00 = {
         nome: 'Monkey D. Luffy',
