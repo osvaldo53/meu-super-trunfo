@@ -26,24 +26,24 @@
             <div class="fundo-atr">
                 <table>
                     <tr>
-                        <td class="table-atr">Força</td>
-                        <td id="forcaP1">95</td>
+                        <td class="table-atr"><input type="radio" name="rad-atributo" id="forca"> Força</td>
+                        <td id="forcaP1"></td>
                     </tr>
                     <tr>
-                        <td class="table-atr">HP</td>
-                        <td id="hpP1">70</td>
+                        <td class="table-atr"><input type="radio" name="rad-atributo" id="hp"> HP</td>
+                        <td id="hpP1"></td>
                     </tr>
                     <tr>
-                        <td class="table-atr">Resistência</td>
-                        <td id="resistenciaP1">60</td>
+                        <td class="table-atr"><input type="radio" name="rad-atributo" id="resistencia"> Resistência</td>
+                        <td id="resistenciaP1"></td>
                     </tr>
                     <tr>
-                        <td class="table-atr">Velocidade</td>
-                        <td id="velocidadeP1">75</td>
+                        <td class="table-atr"><input type="radio" name="rad-atributo" id="velocidade"> Velocidade</td>
+                        <td id="velocidadeP1"></td>
                     </tr>
                     <tr>
-                        <td class="table-atr">Haki</td>
-                        <td id="hakiP1">80</td>
+                        <td class="table-atr"><input type="radio" name="rad-atributo" id="haki"> Haki</td>
+                        <td id="hakiP1"></td>
                     </tr>
                 </table>
             </div>
@@ -88,7 +88,9 @@
 
     </div>
 
-    <button>JOGAR</button>
+    <button onclick="comparaAtributos()">JOGAR</button>
+
+    <div id="resultado-turno"></div>
 
     <a href="cards.html" rel="next">Ver Cards</a>
 

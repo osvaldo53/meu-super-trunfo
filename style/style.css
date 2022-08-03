@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Anime';
-    src: url('fonts/animefont.otf') format('opentype');
+    src: url('../fonts/animefont.otf') format('opentype');
 }
 
 * {
@@ -116,6 +116,16 @@ button {
     margin: 20px;
     width: 250px;
     height: 35px;
+}
+
+#resultado-turno {
+    width: 20vw;
+    text-align: center;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-family: 'Anime', sans-serif;
+    padding: 5px;
 }
 
 a {

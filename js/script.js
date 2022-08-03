@@ -290,10 +290,9 @@ const deckFull = [
 ];
 
 const deckEmbaralhado = embaralhaCartas(deckFull);
-
 const deckPlayer1 = deckEmbaralhado.slice(0, 16);
-console.log(deckPlayer1);
 const deckPlayer2 = deckEmbaralhado.slice(16, 32);
+console.log(deckPlayer1);
 console.log(deckPlayer2);
 
 function embaralhaCartas(deck) { 
@@ -334,7 +333,7 @@ function montaCartas () {
     let nomeP2 = document.querySelector('#nomeP2');
     let figuraP2 = document.querySelector('#figuraP2');
     let forcaP2 = document.querySelector('#forcaP2');
-    let hpP2 = document.querySelector('#hpP1');
+    let hpP2 = document.querySelector('#hpP2');
     let resistenciaP2 = document.querySelector('#resistenciaP2');
     let velocidadeP2 = document.querySelector('#velocidadeP2');
     let hakiP2 = document.querySelector('#hakiP2');
@@ -350,21 +349,41 @@ function montaCartas () {
 
 montaCartas();
 
-// function comparaAtributos(atrP1, atrP2) {
-//     atrP1 = deckPlayer1[0].forca;
-//     atrP2 = deckPlayer2[0].forca;
+function comparaAtributos(atrP1, atrP2) {
+    const atr = document.getElementsByName('rad-atributo');
+    if (atr[0].checked) {
+        atrP1 = deckPlayer1[0].forca;
+        atrP2 = deckPlayer2[0].forca;
+    } else if (atr[1].checked) {
+        atrP1 = deckPlayer1[0].hp;
+        atrP2 = deckPlayer2[0].hp;
+    } else if (atr[2].checked) {
+        atrP1 = deckPlayer1[0].resistencia;
+        atrP2 = deckPlayer2[0].resistencia;
+    } else if (atr[3].checked) {
+        atrP1 = deckPlayer1[0].velocidade;
+        atrP2 = deckPlayer2[0].velocidade;
+    } else if (atr[4].checked) {
+        atrP1 = deckPlayer1[0].haki;
+        atrP2 = deckPlayer2[0].haki;
+    }
 
-//     if (atrP1 > atrP2) {
-//         deckPlayer1.push(deckPlayer2.shift());
-//         alert('P1 ganhou')
-//     } else if (atrP2 > atrP1) {
-//         deckPlayer2.push(deckPlayer1.shift());
-//         alert('P2 ganhou')
-//     } else {
-//         alert('Empatou')
-//     }
-// }
+    const resultado = document.querySelector('#resultado-turno')
 
-// while (deckPlayer1.length > 0 || deckPlayer2 > 0) {
-//     comparaAtributos();
-// }
+    if (atrP1 > atrP2) {
+        deckPlayer1.push(deckPlayer2.shift());
+        deckPlayer1.push(deckPlayer1.shift());
+        resultado.innerHTML = `P1 VENCEU`;
+    } else if (atrP2 > atrP1) {
+        deckPlayer2.push(deckPlayer1.shift());
+        deckPlayer2.push(deckPlayer2.shift());
+        resultado.innerHTML = `P2 VENCEU`;
+    } else {
+        deckPlayer1.push(deckPlayer1.shift());
+        deckPlayer2.push(deckPlayer2.shift());
+        resultado.innerHTML = `EMPATOU`;
+    }
+
+    montaCartas();
+    atualizaDecks();
+}
