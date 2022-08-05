@@ -329,7 +329,7 @@ function montaCartas () {
     velocidadeP1.innerHTML = `${deckPlayer1[0].velocidade}`;
     hakiP1.innerHTML = `${deckPlayer1[0].haki}`;
 
-    //monta carta do player 2
+    //monta carta do player 2 ???
     let nomeP2 = document.querySelector('#nomeP2');
     let figuraP2 = document.querySelector('#figuraP2');
     let forcaP2 = document.querySelector('#forcaP2');
@@ -338,6 +338,20 @@ function montaCartas () {
     let velocidadeP2 = document.querySelector('#velocidadeP2');
     let hakiP2 = document.querySelector('#hakiP2');
 
+    nomeP2.innerHTML = `???`;
+    figuraP2.innerHTML = `<img src="image/token.png" alt="Card">`;
+    forcaP2.innerHTML = `???`;
+    hpP2.innerHTML = `???`;
+    resistenciaP2.innerHTML = `???`;
+    velocidadeP2.innerHTML = `???`;
+    hakiP2.innerHTML = `???`;
+
+    const resultado = document.querySelector('#resultado-turno');
+    resultado.innerHTML = `Escolha um atributo`;
+
+};
+
+function montaCartaCpu () {
     nomeP2.innerHTML = `${deckPlayer2[0].nome}`;
     figuraP2.innerHTML = `${deckPlayer2[0].figura}`
     forcaP2.innerHTML = `${deckPlayer2[0].forca}`;
@@ -345,12 +359,16 @@ function montaCartas () {
     resistenciaP2.innerHTML = `${deckPlayer2[0].resistencia}`;
     velocidadeP2.innerHTML = `${deckPlayer2[0].velocidade}`;
     hakiP2.innerHTML = `${deckPlayer2[0].haki}`;
-};
+}
 
 montaCartas();
 
 function comparaAtributos(atrP1, atrP2) {
+
+    montaCartaCpu();
+
     const atr = document.getElementsByName('rad-atributo');
+
     if (atr[0].checked) {
         atrP1 = deckPlayer1[0].forca;
         atrP2 = deckPlayer2[0].forca;
@@ -377,13 +395,14 @@ function comparaAtributos(atrP1, atrP2) {
     } else if (atrP2 > atrP1) {
         deckPlayer2.push(deckPlayer1.shift());
         deckPlayer2.push(deckPlayer2.shift());
-        resultado.innerHTML = `P2 VENCEU`;
+        resultado.innerHTML = `CPU VENCEU`;
     } else {
         deckPlayer1.push(deckPlayer1.shift());
         deckPlayer2.push(deckPlayer2.shift());
         resultado.innerHTML = `EMPATOU`;
     }
-
-    montaCartas();
+    
+    // setTimeout(montaCartaCpu, 1000);
+    setTimeout(montaCartas, 2600);
     atualizaDecks();
 }

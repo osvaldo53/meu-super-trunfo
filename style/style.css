@@ -20,14 +20,14 @@ body {
 
 body > h1 {
     font-family: 'Anime', sans-serif;
-    width: 45vw;
-    color: rgb(71, 71, 226);
+    width: 46vw;
+    color: white;
     background-color: black;
     font-size: 2.2em;
     margin-bottom: 50px;
     border-radius: 10px;
     text-align: center;
-    margin: 20px;
+    margin: 8px;
 }
 
 #campo-cartas {
@@ -113,8 +113,8 @@ tr {
 }
 
 button {
-    margin: 20px;
-    width: 250px;
+    margin: 12px;
+    width: 270px;
     height: 35px;
 }
 
@@ -128,7 +128,7 @@ button {
     padding: 5px;
 }
 
-a {
+body > a {
     width: 90px;
     height: 35px;
     background-color: black;
@@ -144,8 +144,23 @@ a {
     
 }
 
-a:hover {
+body > a:hover {
     background-color: orangered;
     color: black;
     transition: 400ms;
+}
+
+footer {
+    align-self: flex-end;
+    margin: 10px;
+    color: white;
+}
+
+footer > a {
+    color: white;
+    text-decoration: none;
+}
+
+footer > a:hover {
+    text-decoration: underline;
 }
