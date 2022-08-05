@@ -402,7 +402,6 @@ function comparaAtributos(atrP1, atrP2) {
         resultado.innerHTML = `EMPATOU`;
     }
     
-    // setTimeout(montaCartaCpu, 1000);
     setTimeout(montaCartas, 2600);
     atualizaDecks();
 }
